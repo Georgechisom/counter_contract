@@ -1,25 +1,20 @@
-import React from "react";
+"use client";
+
 import { useScaffoldWriteContract } from "~~/hooks/scaffold-stark/useScaffoldWriteContract";
 
-type Props = { counter: any };
-export const DecreaseCounterButton = ({ counter }: Props) => {
+export const ResetCounterButton = () => {
   const { sendAsync, status } = useScaffoldWriteContract({
     contractName: "CounterContract",
-    functionName: "decrease_counter",
+    functionName: "reset_counter",
     args: [],
   });
 
-  const value = counter ? Number(counter) : 0;
-
-  const isBusy = status === "pending";
-  const isDisabled = isBusy || counter === undefined || counter === 0;
   return (
     <button
-      aria-label="Decrease counter"
+      aria-label="Reset counter"
       className="btn btn-primary btn-sm flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 shadow-md hover:scale-105 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-200"
       onClick={() => sendAsync()}
-      disabled={isDisabled}
-      title={value <= 0 ? "Counter is already at 0" : undefined}
+      disabled={status === "pending"}
     >
       <svg
         aria-hidden="true"
@@ -30,9 +25,18 @@ export const DecreaseCounterButton = ({ counter }: Props) => {
         stroke="currentColor"
         className="w-5 h-5"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4 4v6h6M20 20v-6h-6"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4 10a8 8 0 0114 4.5M20 14a8 8 0 01-14-4.5"
+        />
       </svg>
-      {isBusy ? "Decreasing" : "-1"}
+      {status === "pending" ? "Resetting" : "Reset"}
     </button>
   );
 };
