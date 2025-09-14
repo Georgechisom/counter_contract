@@ -16,16 +16,16 @@ const Home = () => {
     args: [],
   });
   return (
-    <div className="flex items-center flex-col grow pt-10 px-4">
-      <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center">
+    <div className="flex items-center flex-col grow pt-10 px-4 w-full ">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 rounded-xl shadow-lg p-8 max-w-3xl w-full md:w-full text-center">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Counter App</h1>
-        <div className="text-6xl font-mono text-blue-600 mb-6">
+        <div className="text-6xl font-mono mb-6 text-black">
           <CounterValue value={data} isLoading={isLoading} error={error} />
         </div>
-        <div className="flex justify-center gap-4 mb-6 flex-wrap">
-          <DecreaseCounterButton counter={data} />
-          <ResetCounterButton />
+        <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-4 mb-6">
           <IncreaseCounterButton />
+          <ResetCounterButton />
+          <DecreaseCounterButton counter={data} />
         </div>
         <div className="mt-6">
           <SetCounterForm currentValue={data} />

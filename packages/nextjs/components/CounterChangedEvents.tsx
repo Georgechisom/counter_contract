@@ -14,7 +14,7 @@ export const CounterChangedEvents = () => {
     fromBlock: 0n,
     watch: true,
   });
-  console.log(events);
+  // console.log(events);
   if (error) {
     return <div className="text-center text-error">Failed to load error</div>;
   }

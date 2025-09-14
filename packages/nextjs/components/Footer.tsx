@@ -14,7 +14,7 @@ import { BlockExplorerDevnet } from "./scaffold-stark/BlockExplorerDevnet";
  */
 export const Footer = () => {
   const nativeCurrencyPrice = useGlobalState(
-    (state) => state.nativeCurrencyPrice,
+    (state) => state.nativeCurrencyPrice
   );
   const { targetNetwork } = useTargetNetwork();
 

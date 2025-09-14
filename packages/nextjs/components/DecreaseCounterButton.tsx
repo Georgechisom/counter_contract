@@ -16,7 +16,7 @@ export const DecreaseCounterButton = ({ counter }: Props) => {
   return (
     <button
       aria-label="Decrease counter"
-      className="btn btn-primary btn-sm flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 shadow-md hover:scale-105 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-200"
+      className="btn btn-primary btn-lg flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 shadow-md hover:scale-105 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-200 text-black mx-auto"
       onClick={() => sendAsync()}
       disabled={isDisabled}
       title={value <= 0 ? "Counter is already at 0" : undefined}
@@ -32,7 +32,7 @@ export const DecreaseCounterButton = ({ counter }: Props) => {
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5" />
       </svg>
-      {isBusy ? "Decreasing" : "-1"}
+      {isBusy ? "Decreasing" : "Decrease Counter"}
     </button>
   );
 };

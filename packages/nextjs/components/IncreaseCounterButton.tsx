@@ -12,7 +12,7 @@ export const IncreaseCounterButton = () => {
   return (
     <button
       aria-label="Increase counter"
-      className="btn btn-primary btn-sm flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 shadow-md hover:scale-105 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-200"
+      className="btn btn-primary btn-lg flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 shadow-md hover:scale-105 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-200 text-black mx-auto"
       onClick={() => sendAsync()}
       disabled={status === "pending"}
     >
@@ -27,7 +27,7 @@ export const IncreaseCounterButton = () => {
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
       </svg>
-      {status === "pending" ? "Increasing" : "+1"}
+      {status === "pending" ? "Increasing" : "Increase counter"}
     </button>
   );
 };

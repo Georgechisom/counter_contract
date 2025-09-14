@@ -47,7 +47,7 @@ export const SetCounterForm = ({ currentValue }: Props) => {
 
   return (
     <form
-      className="flex items-center gap-2"
+      className="flex items-center my-4 justify-center mt-20"
       onSubmit={(e) => {
         e.preventDefault();
         if (parsed === undefined) return;
@@ -58,7 +58,7 @@ export const SetCounterForm = ({ currentValue }: Props) => {
     >
       <input
         type="number"
-        className="input input-bordered input-sm w-24"
+        className="input input-sm w-30 border-black md:w-40 py-[22px] text-white font-semibold text-lg bg-black rounded-l-full"
         value={value}
         min={0}
         step={1}
@@ -71,6 +71,7 @@ export const SetCounterForm = ({ currentValue }: Props) => {
         title={
           parsed === undefined ? "Enter a non-negative integer" : undefined
         }
+        className="text-black font-bold -ml-1 border-2 rounded-r-full border-black w-52 py-2"
       >
         {isBusy ? "Setting" : "Set"}
       </button>
