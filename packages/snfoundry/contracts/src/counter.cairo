@@ -15,7 +15,8 @@ pub mod CounterContract {
     use starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
     use openzeppelin_access::ownable::OwnableComponent;
     use openzeppelin_token::erc20::interface::{IERC20Dispatcher, IERC20DispatcherTrait};
-    use contracts::utils::{strk_address, strk_to_fri};
+    use crate::utils::{strk_address, strk_to_fri};
+
 
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
 

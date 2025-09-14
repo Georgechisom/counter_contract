@@ -1,7 +1,7 @@
 use starknet::ContractAddress;
 
 pub fn strk_address() -> ContractAddress {
-    0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7.try_into().unwrap()
+    0x04718f5a0Fc34cC1AF16A1cdee98fFB20C31f5cD61D6Ab07201858f4287c938D.try_into().unwrap()
 }
 
 pub fn strk_to_fri(mut amount: u256) -> u256{

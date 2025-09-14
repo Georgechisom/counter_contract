@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useTargetNetwork } from "./useTargetNetwork";
 import { useIsMounted } from "usehooks-ts";
@@ -24,7 +26,7 @@ import { ContractClassHashCache } from "./ContractClassHashCache";
  *   - status: ContractCodeStatus - The deployment status (LOADING, DEPLOYED, NOT_FOUND)
  */
 export const useDeployedContractInfo = <TContractName extends ContractName>(
-  contractName: TContractName,
+  contractName: TContractName
 ) => {
   const isMounted = useIsMounted();
   const { targetNetwork } = useTargetNetwork();
@@ -32,7 +34,7 @@ export const useDeployedContractInfo = <TContractName extends ContractName>(
     contractName as ContractName
   ] as Contract<TContractName>;
   const [status, setStatus] = useState<ContractCodeStatus>(
-    ContractCodeStatus.LOADING,
+    ContractCodeStatus.LOADING
   );
   const { provider: publicClient } = useProvider();
 
@@ -47,7 +49,7 @@ export const useDeployedContractInfo = <TContractName extends ContractName>(
       const contractClassHash = await classHashCache.getClassHash(
         publicClient,
         deployedContract.address,
-        "pre_confirmed" as BlockIdentifier,
+        "pre_confirmed" as BlockIdentifier
       );
 
       if (!isMounted()) {
